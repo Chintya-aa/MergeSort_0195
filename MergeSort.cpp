@@ -36,6 +36,7 @@ void input()
 // create function mergeSort
 void mergeSort(int low, int high)
 {
+
     if (low >= high) // step 1
     {
         return; // step 1.a
@@ -67,27 +68,26 @@ void mergeSort(int low, int high)
         }
         k++; // step 4.d.ii
     }
-}
 
-while (j <= high) // step 4.e
-{
-    B[k] = arr[j]; // step 4.e.i
-    j++;           // step 4.e.ii
-    k = k + 1;     // step 4.e.iii
-}
+    while (j <= high) // step 4.e
+    {
+        B[k] = arr[j]; // step 4.e.i
+        j++;           // step 4.e.ii
+        k = k + 1;     // step 4.e.iii
+    }
 
-while (i <= mid) // step 4.f
-{
-    B[k] = arr[i]; // step 4.f.i
-    i++;           // step 4.f.ii
-    k++;           // step 4.f.iii
-}
+    while (i <= mid) // step 4.f
+    {
+        B[k] = arr[i]; // step 4.f.i
+        i++;           // step 4.f.ii
+        k++;           // step 4.f.iii
+    }
 
-// step 5
-for (int x = low; x <= high; x++)
-{
-    arr[x] = B[x];
-}
+    // step 5
+    for (int x = low; x <= high; x++)
+    {
+        arr[x] = B[x];
+    }
 }
 
 void output()
@@ -98,4 +98,11 @@ void output()
         cout << arr[i] << " ";
     }
     cout << endl;
+}
+
+int main()
+{
+    input();
+    mergeSort(0, n - 1);
+    output();
 }
